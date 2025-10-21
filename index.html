@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 기반 PDF 챗 서비스 시장 분석 보고서 (2025년 10월)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chosen Palette: Calm Neutrals with Sky Blue Accent -->
+    <!-- Application Structure Plan: A single-page application with a fixed sidebar for navigation. This structure allows users to get a quick overview of the report sections and jump to any part of the dense information without losing context. The main content area is scrollable, presenting information in distinct, digestible sections with cards, tables, and charts. This is optimal for a data-rich report, balancing comprehensive detail with user-friendly navigation and preventing user fatigue from a long, unstructured document. -->
+    <!-- Visualization & Content Choices: 
+        1. Market Growth (Bar Chart): Report Info -> EdTech AI Market Size Projection. Goal -> To show change/growth over time. Viz Method -> Chart.js Bar Chart. Interaction -> Tooltips on hover. Justification -> A bar chart is the most intuitive way to visualize market growth forecasts. Library -> Chart.js (Canvas).
+        2. Feature Comparison (Radar Chart): Report Info -> Top quiz tools' capabilities. Goal -> To compare multiple features across different services. Viz Method -> Chart.js Radar Chart. Interaction -> Tooltips on hover. Justification -> A radar chart provides a clear, multi-axial comparison of qualitative/quantitative features, ideal for competitive analysis. Library -> Chart.js (Canvas).
+        3. Service Details (Cards): Report Info -> Individual service features, pricing, pros/cons. Goal -> To inform/organize. Presentation Method -> Styled HTML/Tailwind cards. Interaction -> None, static information display. Justification -> Cards are a modern, responsive way to present discrete blocks of information for easy scanning.
+        4. Detailed Comparison (Table): Report Info -> Granular feature comparison for quiz tools. Goal -> To compare in detail. Presentation Method -> HTML Table. Interaction -> None, static. Justification -> A table is the best format for a direct, feature-by-feature comparison of many items.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <div class="flex">
+        <!-- Sidebar Navigation -->
+        <aside class="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg p-6 hidden md:block">
+            <h1 class="text-xl font-bold text-sky-700 mb-8">AI PDF 서비스 분석</h1>
+            <nav class="space-y-4">
+                <a href="#section-summary" class="block text-slate-600 hover:text-sky-600 font-medium">요약 및 시장 전망</a>
+                <a href="#section-main-services" class="block text-slate-600 hover:text-sky-600 font-medium">주요 서비스 비교 분석</a>
+                <a href="#section-quiz-services" class="block text-slate-600 hover:text-sky-600 font-medium">퀴즈 생성 특화 서비스</a>
+                <a href="#section-korea-trends" class="block text-slate-600 hover:text-sky-600 font-medium">국내 동향 및 서비스</a>
+                <a href="#section-proposal" class="block text-slate-600 hover:text-sky-600 font-medium">신규 서비스 론칭 제언</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-0 md:ml-64 w-full p-6 md:p-10">
+            <header class="mb-12">
+                <h1 class="text-4xl font-bold text-slate-900">AI 기반 PDF 챗 서비스 시장 분석 보고서</h1>
+                <p class="text-lg text-slate-500 mt-2">기준일: 2025년 10월 21일</p>
+            </header>
+
+            <!-- Section 1: Summary & Market Outlook -->
+            <section id="section-summary" class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 border-b-4 border-sky-500 pb-2 mb-6">요약 및 시장 전망</h2>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <p class="text-lg leading-relaxed mb-6">
+                        2025년 현재, AI 기반 PDF 챗 서비스 시장은 단순 문서와의 대화 기능을 넘어, 사용자의 특정 목적에 부합하는 **전문(Vertical) 서비스**로 빠르게 분화하고 있습니다. 특히 교육 및 학습 분야에서 PDF, 웹페이지, 동영상 등 다양한 학습 자료를 기반으로 **자동 퀴즈를 생성**하는 기능이 핵심적인 차별화 포인트로 부상했습니다. 시장은 초기 '범용 챗' 단계에서 벗어나, 학습 효율 극대화를 목표로 하는 '학습 보조 솔루션'으로 진화하는 뚜렷한 경향을 보입니다.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mb-8">
+                        <div class="bg-sky-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-bold text-sky-800">40.5%</h4>
+                            <p class="text-slate-600">생성형 AI 기반 에듀테크 시장<br>연평균 성장률(CAGR)</p>
+                        </div>
+                        <div class="bg-sky-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-bold text-sky-800">52억 달러+</h4>
+                            <p class="text-slate-600">2032년 생성형 AI 에듀테크<br>시장 규모 전망</p>
+                        </div>
+                        <div class="bg-sky-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-bold text-sky-800">퀴즈 생성</h4>
+                            <p class="text-slate-600">학습용 서비스의<br>핵심 기능으로 부상</p>
+                        </div>
+                    </div>
+                    <p class="text-lg leading-relaxed mb-6">
+                        글로벌 에듀테크 시장의 폭발적인 성장세 속에서, 생성형 AI를 활용한 분야는 연평균 40%가 넘는 가장 가파른 성장세를 보이고 있습니다. 이는 개인 맞춤형 학습에 대한 높은 수요를 증명하며, '학습 자료 기반 퀴즈 생성 AI' 서비스는 이 거대한 시장의 핵심적인 부분을 차지할 잠재력이 매우 높습니다. 성공적인 시장 진입을 위해서는 **정확도 높은 퀴즈 생성 능력, 한국어 특화, 그리고 직관적인 사용자 경험**이 필수적입니다.
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="marketGrowthChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Main Services Comparison -->
+            <section id="section-main-services" class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 border-b-4 border-sky-500 pb-2 mb-6">주요 서비스 비교 분석</h2>
+                <p class="text-lg leading-relaxed mb-8">
+                    시장에 존재하는 주요 AI PDF 서비스들은 크게 '범용 문서 분석/대화' 서비스와 특정 목적을 가진 '유틸리티 통합형' 서비스로 나눌 수 있습니다. 각 서비스는 고유한 강점과 타겟 고객을 가지고 있습니다.
+                </p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Card: ChatPDF -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                        <h3 class="text-2xl font-bold mb-4">ChatPDF</h3>
+                        <p class="text-slate-600 mb-4 flex-grow">PDF와 대화하는 기능의 선구자. 빠르고 직관적인 인터페이스가 강점이며, 문서 내용을 빠르게 파악하고 질문하는 데 최적화되어 있습니다.</p>
+                        <div class="mb-4">
+                            <strong class="text-slate-700">핵심 기능:</strong>
+                            <ul class="list-disc list-inside mt-2 text-slate-600">
+                                <li>빠른 PDF 업로드 및 분석</li>
+                                <li>자연어 질의응답</li>
+                                <li>답변 출처 페이지 표시</li>
+                                <li>GPT-3.5/4 기반</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-slate-700">요금제:</strong>
+                            <p class="text-slate-600">무료(제한적) / 유료 Plus ($5/월)</p>
+                        </div>
+                    </div>
+                    <!-- Card: PDF.ai -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                        <h3 class="text-2xl font-bold mb-4">PDF.ai</h3>
+                        <p class="text-slate-600 mb-4 flex-grow">개발자 친화적인 서비스. API를 제공하여 자체 서비스에 PDF 챗 기능을 통합하려는 기업이나 개발자에게 유리합니다. 여러 파일 동시 분석도 지원합니다.</p>
+                        <div class="mb-4">
+                            <strong class="text-slate-700">핵심 기능:</strong>
+                            <ul class="list-disc list-inside mt-2 text-slate-600">
+                                <li>강력한 API 제공</li>
+                                <li>웹사이트에 챗봇 임베드 기능</li>
+                                <li>다중 문서 동시 질의</li>
+                                <li>OCR 기능으로 스캔 문서 지원</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-slate-700">요금제:</strong>
+                            <p class="text-slate-600">무료(제한적) / 유료 Pro ($15/월) 부터</p>
+                        </div>
+                    </div>
+                    <!-- Card: Smallpdf -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                        <h3 class="text-2xl font-bold mb-4">Smallpdf</h3>
+                        <p class="text-slate-600 mb-4 flex-grow">PDF 변환, 편집 등 다양한 유틸리티를 제공하는 플랫폼 내에 AI 기능을 통합했습니다. 문서 작업과 AI 분석을 한 곳에서 해결하려는 사용자에게 적합합니다.</p>
+                        <div class="mb-4">
+                            <strong class="text-slate-700">핵심 기능:</strong>
+                            <ul class="list-disc list-inside mt-2 text-slate-600">
+                                <li>PDF 요약, 채팅, 번역 기능</li>
+                                <li>AI 기반 퀴즈 생성 기능 포함</li>
+                                <li>20+개의 다양한 PDF 도구와 연동</li>
+                                <li>한국어 인터페이스 지원</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-slate-700">요금제:</strong>
+                            <p class="text-slate-600">무료(제한적) / 유료 Pro (월 12,000원)</p>
+                        </div>
+                    </div>
+                    <!-- Card: Adobe Acrobat AI Assistant -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                        <h3 class="text-2xl font-bold mb-4">Adobe Acrobat AI Assistant</h3>
+                        <p class="text-slate-600 mb-4 flex-grow">PDF의 원조인 Adobe가 제공하는 강력한 신뢰성의 AI 기능. Acrobat Pro 구독자에게 제공되며, 문서 요약, 분석, 질의응답, 퀴즈 생성까지 지원합니다.</p>
+                        <div class="mb-4">
+                            <strong class="text-slate-700">핵심 기능:</strong>
+                            <ul class="list-disc list-inside mt-2 text-slate-600">
+                                <li>높은 신뢰도와 보안</li>
+                                <li>문서 요약 및 인사이트 추출</li>
+                                <li>AI 기반 퀴즈/복습 문제 생성</li>
+                                <li>Acrobat 생태계와 완벽한 통합</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-slate-700">요금제:</strong>
+                            <p class="text-slate-600">Acrobat Pro 구독(월 24,000원)에 포함</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Quiz Generation Services -->
+            <section id="section-quiz-services" class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 border-b-4 border-sky-500 pb-2 mb-6">퀴즈 생성 특화 서비스</h2>
+                <p class="text-lg leading-relaxed mb-6">
+                    학습 및 교육 시장을 겨냥하여, 퀴즈 및 복습 자료 생성에 특화된 서비스들이 두각을 나타내고 있습니다. 이들은 단순한 텍스트 변환을 넘어 교육학적 이론을 접목하거나, 다양한 유형의 문제를 생성하는 등 고도화된 기능을 제공합니다.
+                </p>
+                <div class="chart-container mb-12">
+                    <canvas id="featureRadarChart"></canvas>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-md overflow-x-auto">
+                    <h4 class="text-xl font-semibold mb-4">퀴즈 생성 서비스 기능 비교</h4>
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100">
+                                <th class="p-4 border-b-2 border-slate-200 font-bold">서비스명</th>
+                                <th class="p-4 border-b-2 border-slate-200 font-bold">퀴즈 유형</th>
+                                <th class="p-4 border-b-2 border-slate-200 font-bold">입력 소스</th>
+                                <th class="p-4 border-b-2 border-slate-200 font-bold">특징</th>
+                                <th class="p-4 border-b-2 border-slate-200 font-bold">가격 (월)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-4 border-b border-slate-200 font-semibold">Quizgecko</td>
+                                <td class="p-4 border-b border-slate-200">객관식, T/F, 단답형, 빈칸 채우기</td>
+                                <td class="p-4 border-b border-slate-200">PDF, DOC, URL, Youtube</td>
+                                <td class="p-4 border-b border-slate-200">크롬 확장 프로그램, 플래시카드 생성</td>
+                                <td class="p-4 border-b border-slate-200">무료 / $8 부터</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-4 border-b border-slate-200 font-semibold">Questgen</td>
+                                <td class="p-4 border-b border-slate-200">고차원적 질문(Why, How), FAQ</td>
+                                <td class="p-4 border-b border-slate-200">텍스트, PDF</td>
+                                <td class="p-4 border-b border-slate-200">블룸의 교육 목표 분류법 기반 난이도 조절</td>
+                                <td class="p-4 border-b border-slate-200">무료 / $15 부터</td>
+                            </tr>
+                             <tr class="hover:bg-slate-50">
+                                <td class="p-4 border-b border-slate-200 font-semibold">Conker</td>
+                                <td class="p-4 border-b border-slate-200">객관식, T/F, 빈칸 채우기</td>
+                                <td class="p-4 border-b border-slate-200">텍스트, 주제어</td>
+                                <td class="p-4 border-b border-slate-200">교실용, 접근성 기능(읽어주기), LMS 연동</td>
+                                <td class="p-4 border-b border-slate-200">무료(제한적)</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-4 border-b border-slate-200 font-semibold">OpExams</td>
+                                <td class="p-4 border-b border-slate-200">객관식, T/F, 서술형</td>
+                                <td class="p-4 border-b border-slate-200">PDF, Youtube, 텍스트</td>
+                                <td class="p-4 border-b border-slate-200">대량 퀴즈 생성, 자동 채점 및 리포트</td>
+                                <td class="p-4 border-b border-slate-200">무료 / 가격 문의</td>
+                            </tr>
+                             <tr class="hover:bg-slate-50">
+                                <td class="p-4 border-b border-slate-200 font-semibold">Smallpdf</td>
+                                <td class="p-4 border-b border-slate-200">객관식, T/F, 주관식</td>
+                                <td class="p-4 border-b border-slate-200">PDF, Word, 이미지 등</td>
+                                <td class="p-4 border-b border-slate-200">PDF 유틸리티와 통합, 한국어 지원</td>
+                                <td class="p-4 border-b border-slate-200">무료 / 월 12,000원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 4: Korean Trends & Services -->
+            <section id="section-korea-trends" class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 border-b-4 border-sky-500 pb-2 mb-6">국내 동향 및 서비스</h2>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <p class="text-lg leading-relaxed mb-6">
+                        2025년 현재 국내에서는 AI PDF 챗만을 전문으로 하는 독립적인 서비스보다는, **거대 AI 플랫폼 내에 문서 분석 기능이 포함**되는 형태로 발전하고 있습니다. 20-40대를 중심으로 생성형 AI 사용이 보편화되었으며, 학습 및 업무 목적으로의 활용이 매우 높게 나타나고 있어 관련 시장의 잠재력은 매우 큽니다.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                         <div class="bg-slate-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">뤼튼(Wrtn)</h4>
+                            <p class="text-slate-600">
+                                국내 대표 생성형 AI 플랫폼. 파일 업로드(PDF, TXT 등)를 통해 문서 내용을 기반으로 요약, 정보 추출, 글쓰기 등 다양한 작업을 수행할 수 있습니다. 아직 전문적인 퀴즈 생성 기능은 없지만, 프롬프트를 통해 유사한 기능을 구현할 수 있으며 향후 공식 기능으로 추가될 가능성이 높습니다. 한국어 처리 능력이 뛰어난 것이 최대 강점입니다.
+                            </p>
+                        </div>
+                         <div class="bg-slate-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">기타 플랫폼</h4>
+                            <p class="text-slate-600">
+                                네이버의 '클로바X'나 다른 AI 서비스들 역시 문서 이해(RAG) 기술을 고도화하고 있습니다. 이는 PDF 등 외부 문서를 AI 모델의 답변 생성에 활용하는 기술로, PDF 챗 서비스의 기반이 됩니다. 이들 플랫폼이 언제든 학습 시장을 겨냥하여 퀴즈 생성과 같은 특화 기능을 추가할 수 있는 잠재적인 경쟁자로 볼 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                     <p class="text-lg leading-relaxed mt-8">
+                        결론적으로, 현재 국내 시장은 '퀴즈 생성'에 특화된 독보적인 국산 서비스가 부재한 **'기회의 장'** 입니다. 글로벌 서비스들이 한국어 지원을 강화하고 있지만, 국내 교육 환경의 특수성과 한국어의 미묘한 뉘앙스를 완벽하게 이해하는 데는 한계가 있습니다. 따라서 **한국어와 국내 교육 과정에 최적화된 서비스**를 출시한다면 충분히 경쟁력을 가질 수 있습니다.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 5: New Service Launch Proposal -->
+            <section id="section-proposal">
+                <h2 class="text-3xl font-bold text-slate-800 border-b-4 border-sky-500 pb-2 mb-6">신규 서비스 론칭 제언</h2>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <p class="text-lg leading-relaxed mb-8">
+                       종합적인 시장 분석 결과, 'PDF 및 학습 자료 기반 AI 퀴즈 생성 서비스'는 매우 높은 시장성과 성공 가능성을 가지고 있습니다. 성공적인 론칭과 시장 안착을 위해 다음과 같은 전략을 제언합니다.
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-2xl font-semibold text-sky-700 mb-3">1. 시장 기회 및 목표 고객</h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                <strong>시장 기회:</strong> 글로벌 서비스의 한국어 처리 능력 한계와 국내 특화 서비스의 부재가 명확한 기회 요인입니다. 특히 내신, 수능, 자격증 시험 등 명확한 범위와 정답이 있는 시험을 준비하는 시장은 매우 큰 초기 타겟이 될 수 있습니다.
+                                <br>
+                                <strong>핵심 목표 고객:</strong>
+                                <ul class="list-disc list-inside mt-2 text-slate-600">
+                                    <li><strong>1차:</strong> 중/고등학생, 대학생 (시험 대비, 과제 준비)</li>
+                                    <li><strong>2차:</strong> 자격증 수험생, 공무원 시험 준비생 (방대한 학습 자료 요약 및 문제 풀이)</li>
+                                    <li><strong>3차:</strong> 교사, 학원 강사 (수업 자료 및 평가 문제 제작)</li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-2xl font-semibold text-sky-700 mb-3">2. 핵심 성공 요인 (Key Success Factors)</h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                경쟁 우위를 확보하기 위해 다음 세 가지 요소에 집중해야 합니다.
+                            </p>
+                             <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="border-l-4 border-sky-500 pl-4">
+                                    <h5 class="font-bold text-lg">압도적인 퀴즈 품질</h5>
+                                    <p>단순 사실 확인을 넘어, 도표/이미지 해석, 추론, 비판적 사고를 요하는 고차원적 문제 생성 능력. 블룸의 교육 목표 분류법 등을 적용하여 체계적인 난이도 조절 기능 필수.</p>
+                                </div>
+                                <div class="border-l-4 border-sky-500 pl-4">
+                                    <h5 class="font-bold text-lg">한국어 및 교육과정 특화</h5>
+                                    <p>수능/내신 기출문제 스타일, EBS 교재 뉘앙스 등 한국 교육 시스템에 대한 깊은 이해를 바탕으로 한 문제 생성. 자연스러운 한국어 표현과 문맥 이해는 기본.</p>
+                                </div>
+                                <div class="border-l-4 border-sky-500 pl-4">
+                                    <h5 class="font-bold text-lg">직관적이고 유용한 UX/UI</h5>
+                                    <p>학습자가 '오답노트', '반복학습', '학습 리포트' 등 실제 학습 과정에 필요한 부가 기능을 AI 퀴즈와 함께 자연스럽게 사용할 수 있는 통합적 학습 경험을 제공.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-2xl font-semibold text-sky-700 mb-3">3. 최종 의견 및 전망</h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                현재 시장은 기술적 가능성이 입증되었고, 사용자 수요 또한 명확하게 존재합니다. 거대 플랫폼들이 이 시장에 본격적으로 진입하기 전에, **'퀴즈 생성'이라는 특정 분야에서 최고의 품질과 사용자 경험을 제공하는 전문 서비스**로 빠르게 포지셔닝하는 것이 중요합니다. 
+                                <br><br>
+                                초기에는 PDF뿐만 아니라 웹페이지 URL, 유튜브 강의 영상 스크립트 등 다양한 형태의 학습 자료를 입력받을 수 있도록 확장성을 고려해야 합니다. B2C 모델로 시작하여 사용자 기반을 확보한 후, B2B(학교, 학원, 기업 교육팀) 모델로 확장하는 로드맵을 추천합니다.
+                                <br><br>
+                                <strong class="text-slate-900">결론적으로, 지금이 바로 '한국형 AI 학습 튜터'의 기준을 제시할 수 있는 최적의 시점입니다. 명확한 목표 설정과 빠른 실행이 동반된다면, 시장을 선도하는 서비스로 성장할 가능성이 매우 높다고 판단됩니다.</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling for sidebar navigation
+            document.querySelectorAll('aside a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Chart.js: Market Growth Chart
+            const marketCtx = document.getElementById('marketGrowthChart').getContext('2d');
+            new Chart(marketCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['2023', '2025', '2027', '2029', '2032'],
+                    datasets: [{
+                        label: '생성형 AI 에듀테크 시장 규모 (억 달러)',
+                        data: [2.68, 6.5, 14.2, 28.5, 52.61],
+                        backgroundColor: 'rgba(14, 165, 233, 0.6)',
+                        borderColor: 'rgba(14, 165, 233, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: '생성형 AI 기반 에듀테크 시장 성장 전망',
+                            font: { size: 16 }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '시장 규모 (억 달러)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Chart.js: Feature Radar Chart
+            const radarCtx = document.getElementById('featureRadarChart').getContext('2d');
+            new Chart(radarCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['다양한 퀴즈 유형', '고차원 질문 생성', '입력소스 다양성', '부가 학습 기능', '한국어 지원', 'LMS 연동'],
+                    datasets: [
+                        {
+                            label: 'Quizgecko',
+                            data: [5, 3, 5, 4, 3, 2],
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            pointBackgroundColor: 'rgb(255, 99, 132)',
+                        },
+                        {
+                            label: 'Questgen',
+                            data: [4, 5, 2, 3, 2, 1],
+                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgb(54, 162, 235)',
+                            pointBackgroundColor: 'rgb(54, 162, 235)',
+                        },
+                        {
+                            label: 'Smallpdf (AI)',
+                            data: [4, 2, 5, 2, 4, 1],
+                            backgroundColor: 'rgba(255, 205, 86, 0.2)',
+                            borderColor: 'rgb(255, 205, 86)',
+                            pointBackgroundColor: 'rgb(255, 205, 86)',
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: '주요 퀴즈 생성 서비스 기능 비교',
+                            font: { size: 16 }
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 0,
+                            suggestedMax: 5,
+                            pointLabels: { font: { size: 12 } }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
